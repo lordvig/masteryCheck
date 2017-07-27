@@ -1,0 +1,17 @@
+<h2> Your Team </h2>
+{% for player in data.a %}
+<p> 
+    <b> {{player.name}} </b> : {{player.championName}} <br/>
+    Ranked Solo: {{player.rank_solo}}, Ranked Flex: {{player.rank_flex}} <br/>
+    Mastery: {{player.mastery}}
+</p>
+{% endfor %}
+
+<h2> Opponent Team </h2>
+{% for player in data.b %}
+<p> 
+    <b> {{player.name}} </b> : {{player.championName}} <br/>
+    Ranked Solo: {{player.rank_solo}}, Ranked Flex: {{player.rank_flex}} <br/>
+    Mastery: {{player.mastery}}
+</p>
+{% endfor %}
