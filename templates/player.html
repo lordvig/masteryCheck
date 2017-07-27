@@ -1,0 +1,10 @@
+<h1> {{data.name}} </h1>
+{% if 'RANKED_SOLO_5x5' in data.league_data %}
+<p> Ranked Solo: {{ data.league_data['RANKED_SOLO_5x5'] }} </p>
+{% endif %} 
+{% if 'RANKED_FLEX_SR' in data.league_data %}
+<p> Ranked Flex: {{ data.league_data['RANKED_FLEX_SR'] }} 
+{% endif %}
+{% for champ in data.champ_mastery %}
+<p> {{ champ.championName }} : {{champ.championLevel}} , {{champ.championPoints}} </p>
+{% endfor %}
