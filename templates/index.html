@@ -1,3 +1,18 @@
 <h1> Mastery Check </h1>
 League of Legends <br/>
 Check champion mastery, ranks of player in your game <br/>
+
+<br/>
+<form id="summoner-form" >
+    Summoner Name: <input type="text" id="summoner-name"/> <br/>
+    <button type="button" id="current-submit"> Current Game </button>
+</form>
+
+<script>
+    document.getElementById('current-submit').addEventListener("click", function(){
+        var name = document.getElementById('summoner-name').value
+        if(name)
+            //window.location.href = '/test/champ/222'
+            window.location.href = "/current/"+name 
+    })
+</script>

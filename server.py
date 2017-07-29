@@ -28,5 +28,11 @@ def current_game(name):
         current = get_current_game(name)
         data = current
         return render_template("currentGame.html", data=data)
-    except:
+    except Exception as e:
+        print(e)
         return render_template("test.html", data="Couldn't get current game")
+
+
+@app.route("/riot.txt")
+def riot_perm():
+    return '63f43679-103b-410d-8c27-788a863b3012'

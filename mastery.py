@@ -6,7 +6,7 @@ RANK_SOLO = 'RANKED_SOLO_5x5'
 RANK_FLEX = 'RANKED_FLEX_SR'
 
 # specifics
-watcher = RiotWatcher('RGAPI-c8ad65d4-0f24-4014-bcaf-9a1ddcc5c341')
+watcher = RiotWatcher('RGAPI-6c3cba46-35c1-40cb-89ed-07be45fc5093')
 def_region = 'euw1'
 """
 test values
@@ -119,10 +119,10 @@ def get_current_game(name, region=def_region):
     team_grp = defaultdict(list)
     for pl in partic:
         team_grp[pl['teamId']].append(process_player(pl))
-        if pl['summonerName'].lower() == name.lower():
+        if pl['summonerId'] == id:
             myteam = pl['teamId']
     # a -> my team, b -> other team
-    team_grp = {("a" if k == myteam else "b")                : v for (k, v) in team_grp.items()}
+    team_grp = {("a" if k == myteam else "b"): v for (k, v) in team_grp.items()}
     return team_grp
 
 
